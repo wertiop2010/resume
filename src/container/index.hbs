@@ -5,6 +5,33 @@
 
 <h1>Hello world</h1>
 
+<main>
+        <section>
+            <div>
+                <h2>{{summary.title}}</h2>
+            </div>
+            <div>
+                <p>
+                    {{summary.text}}
+                </p>
+            </div>
+        </section>
+
+
+        {{#with experience}}
+        <section>
+            <div>
+                <h2>{{title}}</h2>
+            </div>
+            <div>
+                <p>
+                  {{text}}
+                </p>
+            </div>
+        </section>
+        {{/with}}
+    </main>
+
 {{!-- 
     Цей код містить лише те, що буде виводитись в <body>
     Адже наш layout/default.hbs має вже структуру HTML
