@@ -1,0 +1,130 @@
+<div>
+    {{#with program}}
+        <main>
+            <section>
+            {{#with excursion}}
+                <h1>{{name}}</h1>
+                <br>
+                Location:
+                    {{#with location}}
+                        <em>
+                            {{city}},
+                            {{country}}
+                        </em>
+                        <br>
+                    {{/with}}
+                Початок: {{date}}
+                <br>
+                <div>
+                    <h2>Програма:</h2>
+                    {{#each program}}
+                        <b>{{name}} ({{duration}})</b>
+                        <br>
+                        Тематика: {{type}}
+                        <br>
+                        Деталі:
+                        {{#with details}}
+                        <br>
+                            {{#with museum}} 
+                                Ім'я: <em>{{name}}</em>
+                                <br>
+                                <br>
+                                <div>
+                                Адреса:
+                                {{#with location}}
+                                    <br>
+                                    <address>
+                                        {{address}},
+                                        <br>
+                                        {{city}},
+                                        <br>
+                                        {{country}}
+                                    </address>
+                                </div>
+                                <br>
+                                <div>
+                                {{/with}}
+                                    <b>Експонати:</b>
+                                        <ul>
+                                            {{#each exhibits}}
+                                                <br>
+                                                <li>
+                                                    {{name}}
+                                                    <br>
+                                                    {{artist}}
+                                                    <br>
+                                                    {{description}}
+                                                    <br>
+                                                    {{#if audio_guide}}
+                                                    Є аудіогід
+                                                    {{/if}}
+                                                    <br>
+                                                </li>
+                                            {{/each}}
+                                        </ul>
+                            {{/with}}
+
+                            </div>
+                            {{#with with}}
+                                Ім'я перекладача: {{name}}
+                                <br>
+                                Мова: {{language}}
+                                <br>
+                                Рейтинг: ({{rating}})
+                            {{/with}}
+                            <br>
+                            <br>
+                        
+                        <div>
+                        {{#with venue}}
+                            Ім'я: <em>{{name}}</em>
+                            <br>
+                            <br>
+                            <div>
+                            Адреса:
+                            {{#with location}}
+                                <br>
+                                <address>
+                                    {{address}},
+                                    <br>
+                                    {{city}},
+                                    <br>
+                                    {{country}}
+                                </address>
+                            </div>
+                            <br>
+                            {{/with}}  
+                        {{/with}}
+                        </div>
+                        <div>
+                            {{#each performers}}
+                            <ul>
+                                <li>
+                                Name: {{name}}
+                                <br>
+                                Type: {{type}}
+                                <br>
+                                </li>
+                            </ul>
+                            {{/each}}
+                            {{#with guide}}
+                            Ім'я перекладача: {{name}}
+                                <br>
+                                Мова: {{language}}
+                                <br>
+                                Рейтинг: ({{rating}})
+                            {{/with}}
+                        </div>
+                        {{/with}}
+                    {{/each}}
+                </div>
+            {{/with}}
+            </section>
+        </main>
+    {{/with}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
