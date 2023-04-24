@@ -1,0 +1,81 @@
+<div> 
+    <main>
+        <section>
+            <div><h1><span class="badge bg-secondary">{{name}}</span></h1></div>
+            <p><b>{{description}}</b></p> 
+                <div> 
+                    year: {{history.year}}<br>
+                    founder: {{history.founder}}<br>
+                </div> 
+
+                <div> 
+                    types:
+                <ul>
+                    {{#each types}}
+                
+                    <span class="badge text-bg-success"><li>{{this}}</li></span>
+                    <br>
+                    {{/each}}
+                </ul>
+                </div>
+
+                <div> 
+                    <b>syntax:</b>
+                    <br>
+                    {{#with syntax}}
+                        {{#each variables}}
+                        <span class="badge text-bg-success"><li>{{this}}</li></span>
+                        
+                        {{/each}}
+                        <br>
+                        {{#each functions}}
+                        <span class="badge text-bg-info"><li>{{this}}</li></span>
+                      
+                        {{/each}}
+                        <br>
+                        {{#each conditionals}}
+                        <span class="badge text-bg-danger"><li>{{this}}</li></span>
+                       
+                        {{/each}}
+                        <br>
+                        {{#each loops}}
+                        <span class="badge text-bg-primary"><li>{{this}}</li></span>
+                        
+                        {{/each}}
+                        <br>
+                        {{#each classes}}
+                        <span class="badge text-bg-dark"><li>{{this}}</li></span>
+                        
+                        {{/each}}
+                        <br>
+                    {{/with}}
+                </div> 
+
+                <div>
+                     <b>libraries:</b> <br>
+                    {{#each libraries}}
+                        <span class="badge text-bg-dark"><li>{{this}}</li></span>
+                        <br>
+                    {{/each}}
+                     <b>libraries:</b> <br>
+                     {{#each tools}}
+                        <span class="badge text-bg-primary"><li>{{this}}</li></span>
+                        <br>
+                    {{/each}}
+                    <div>
+                         <b>community:</b> <br>
+                        {{#each community}}
+                           
+                            <span ><li><button type="button" class="btn btn-link">{{name}}<br>{{type}}</button></li></span>
+                           
+                        {{/each}}
+                    </div>
+                </div>               
+        </section>
+    </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
