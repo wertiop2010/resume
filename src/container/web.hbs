@@ -1,0 +1,103 @@
+<div>
+    {{#with web}}
+        <main>
+            <section>
+                {{#each languages}}
+                    <h2>{{name}}</h2>
+                    <br>
+                    <b>Version: {{version}}</b>
+                    <p>{{description}}</p>
+                        <ul>
+                        {{#each elements}}
+                            <li>
+                                Тег: 
+                                {{name}}
+                                <br>
+                                <p>
+                                {{description}}
+                                <br>
+                                <div>
+                                    <ul>
+                                    {{#each attributes}}
+                                    <li>
+                                    Attributes: 
+                                    {{name}}
+                                    <br>
+                                    {{description}}
+                                    <br>
+                                    </li>
+                                    {{/each}}
+                                    </ul>
+                                </div>
+                                </p>
+                            <br>
+                            </li>
+                        {{/each}}
+                        </ul>
+                        <ul>
+                        {{#each properties}}
+                            <li>
+                                Тег: 
+                                {{name}}
+                                <br>
+                                <p>
+                                {{description}}
+                                <br>
+                                <div>
+                                    <ul>
+                                    {{#each values}}
+                                    <li>
+                                    Attributes: 
+                                    {{value}}
+                                    <br>
+                                    {{description}}
+                                    <br>
+                                    </li>
+                                    {{/each}}
+                                    </ul>
+                                </div>
+                                </p>
+                            <br>
+                            </li>
+                        {{/each}}
+                        </ul>
+                        <ul>
+                        {{#each functions}}
+                            <li>
+                                Тег: 
+                                {{name}}
+                                <br>
+                                <p>
+                                {{description}}
+                                <br>
+                                <div>
+                                    <ul>
+                                    {{#each parameters}}
+                                    <li>
+                                    Attributes: 
+                                    {{name}}
+                                    <br>
+                                    Type:
+                                    {{type}}
+                                    <br>
+                                    {{description}}
+                                    <br>
+                                    </li>
+                                    {{/each}}
+                                    </ul>
+                                </div>
+                                </p>
+                            <br>
+                            </li>
+                        {{/each}}
+                        </ul>
+                {{/each}}
+            </section>
+        </main>
+    {{/with}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
