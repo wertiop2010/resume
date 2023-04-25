@@ -1,0 +1,168 @@
+<div>
+    <main>
+        <section>
+            <div>
+                <h1>{{name}}</h1>
+                <em>{{description}}</em><br>
+                <b><span class="badge rounded-pill text-bg-danger">{{price}}</span></b><br>
+                <b>{{category}}</b><br>
+                <span class="badge text-bg-primary">features:</span>
+                <ul>
+                    {{#with features}}
+                        <li>
+                            <ul>
+                                {{#with processor}}
+                                processor:
+                                <li>
+                                    brand{{brand}}
+                                </li>
+                                <li>
+                                    model{{model}}
+                                </li>
+                                <li>
+                                    speed{{speed}}
+                                </li>
+                                <li>
+                                    cores{{cores}}
+                                </li>
+                                <li>
+                                    cache{{cache}}
+                                </li>
+                                {{/with}}
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                {{#with memory}}
+                                <span class="badge text-bg-primary">memory:</span>
+                                <li>
+                                    type{{type}}
+                                </li>
+                                 <li>
+                                    size{{size}}
+                                </li>
+                                 <li>
+                                    size{{size}}
+                                </li>
+                                {{/with}}
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                {{#with storage}}
+                                 <span class="badge text-bg-primary">storage:</span>
+                                <li>
+                                    type{{type}}
+                                </li>
+                                 <li>
+                                    size{{size}}
+                                </li>
+                                {{/with}}
+                            </ul>
+                        </li>
+                         <li>
+                            <ul>
+                                {{#with display}}
+                                <span class="badge text-bg-primary">display:</span>
+                                <li>
+                                    size{{size}}
+                                </li>
+                                 <li>
+                                    resolution{{resolution}}
+                                </li>
+                                 <li>
+                                    technology{{technology}}
+                                </li>
+                                 <li>
+                                    color_space{{color_space}}
+                                </li>
+                                 <li>
+                                    brightness{{brightness}}
+                                </li>
+                                <li>
+                                    refresh_rate{{refresh_rate}}
+                                </li>
+                                {{/with}}
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                {{#with graphics}}
+                                <span class="badge text-bg-primary">graphics:</span>
+                                <li>
+                                    brand{{brand}}
+                                </li>
+                                 <li>
+                                    model{{model}}
+                                </li>
+                                 <li>
+                                    memory{{memory}}
+                                </li>
+                                {{/with}}
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                {{#each ports}}
+                                <span class="badge text-bg-primary">ports:</span>
+                                <li>
+                                    type{{type}}
+                                </li>
+                                <li>
+                                    count{{count}}
+                                </li>
+                                 <li>
+                                    <ul>
+                                        {{#each features}}
+                                            features:
+                                            <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </li>
+
+                                {{/each}}
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                {{#with battery}}
+                                <span class="badge text-bg-primary">ports:</span>
+                                <li>
+                                    type{{type}}
+                                </li>
+                                <li>
+                                    capacity{{capacity}}
+                                </li>
+                                 <li>
+                                    life{{life}}
+                                </li>
+                                {{/with}}
+                            </ul>
+                        </li>
+                        <li>
+                          <span class="badge text-bg-primary">operating_system: {{operating_system}} </span>  
+                        </li>
+                        <li>
+                            <ul>
+                                {{#each accessories}}
+                                <span class="badge text-bg-primary">accessories:</span>
+                                <li>
+                                    name {{name}}
+                                </li>
+                                 <li>
+                                    price {{price}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                    {{/with}}
+                </ul>
+            </div>
+        </section>
+    </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
