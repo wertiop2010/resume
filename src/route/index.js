@@ -863,7 +863,6 @@ router.get('/car', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-<<<<<<< HEAD
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1018,7 +1017,6 @@ router.get('/facebook', function (req, res) {
         ],
       },
     ],
-=======
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1103,7 +1101,6 @@ router.get('/mac', function (req, res) {
         },
       ],
     },
->>>>>>> 5fd892c0b86891df964e925486db3c362ba6c109
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
