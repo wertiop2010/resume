@@ -863,23 +863,11 @@ router.get('/car', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-<<<<<<< HEAD
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/bootstrap', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('bootstrap', {
-    layout: 'bootstrap',
-=======
-<<<<<<< HEAD
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
-    layout: 'basic',
-
     name: 'Facebook',
     users: [
       {
@@ -1027,13 +1015,17 @@ router.get('/facebook', function (req, res) {
         ],
       },
     ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
     layout: 'basic',
-    
+
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
     price: 1999.99,
@@ -1111,17 +1103,8 @@ router.get('/mac', function (req, res) {
         },
       ],
     },
->>>>>>> 5fd892c0b86891df964e925486db3c362ba6c109
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
-
-<<<<<<< HEAD
-=======
-// ================================================================
-
->>>>>>> f6a339f72b5b0767725b4d128b8eab0e953f4ffe
-// ================================================================
-// Підключаємо роутер до бек-енду
 
 module.exports = router
