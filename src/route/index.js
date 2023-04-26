@@ -864,6 +864,15 @@ router.get('/car', function (req, res) {
 })
 
 <<<<<<< HEAD
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrap', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    layout: 'bootstrap',
+=======
+<<<<<<< HEAD
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1104,12 +1113,16 @@ router.get('/mac', function (req, res) {
       ],
     },
 >>>>>>> 5fd892c0b86891df964e925486db3c362ba6c109
+>>>>>>> f6a339f72b5b0767725b4d128b8eab0e953f4ffe
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+<<<<<<< HEAD
+=======
 // ================================================================
 
+>>>>>>> f6a339f72b5b0767725b4d128b8eab0e953f4ffe
 // ================================================================
 // Підключаємо роутер до бек-енду
 
