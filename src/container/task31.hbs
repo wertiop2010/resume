@@ -1,0 +1,335 @@
+<main>
+    <section>
+        <div class="row">
+         
+            {{#with navigation}}
+                <button class="btn btn-link col-2" href="{{links.[0].href}}">{{links.[0].text}}</button>
+                <button class="btn btn-link col-2" href="{{links.[1].href}}">{{links.[1].text}}</button>
+                <button class="btn btn-link col-2" href="{{links.[2].href}}">{{links.[2].text}}</button>
+                <button class="btn btn-primary col-2" href="{{button.href}}">{{button.text}}</button>
+            {{/with}}
+           
+        </div>
+    </section>
+
+    <hr>
+    <br>
+    <section>
+        <div>
+        
+            {{#with header}}
+                <h1>{{title}}</h1>
+                <p>{{description}}</p>
+                {{#with button}}
+                <button class="btn btn-primary" href="{{button.href}}">{{text}}</button>
+                {{/with}}
+            {{/with}}
+           
+        </div>
+    </section>
+
+    <hr>
+    <br>
+    <section>
+        <h2>{{city.title}}</h2>
+        <div class="row gy-4">      
+            <div class="col-5">
+                <div class="card">
+                    <img class="card-img-top" alt="{{city.cards.[0].picture.alt}}" src="{{city.cards.[0].picture.src}}">
+                    <div class="card-body">
+                        <h6 class="card-title">{{city.cards.[0].title}}</h6>
+                        <p><div class="">{{city.cards.[0].description}}</div></p>
+                        <button class="btn btn-primary" href="{{city.cards.[0].button.href}}">{{city.cards.[0].button.text}}</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-5">
+                <div class="card">
+                    <img class="card-img-top" alt="{{city.cards.[1].picture.alt}}" src="{{city.cards.[0].picture.src}}">
+                    <div class="card-body">
+                        <h6 class="card-title">{{city.cards.[1].title}}</h6>
+                        <p><div class="">{{city.cards.[1].description}}</div></p>
+                        <button class="btn btn-primary" href="{{city.cards.[1].button.href}}">{{city.cards.[1].button.text}}</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-5">
+                <div class="card">
+                    <img class="card-img-top" alt="{{city.cards.[2].picture.alt}}" src="{{city.cards.[2].picture.src}}">
+                    <div class="card-body">
+                        <h6 class="card-title">{{city.cards.[2].title}}</h6>
+                        <p><div class="">{{city.cards.[2].description}}</div></p>
+                        <button class="btn btn-primary" href="{{city.cards.[2].button.href}}">{{city.cards.[2].button.text}}</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-5">
+                <div class="card">
+                    <img class="card-img-top" alt="{{city.cards.[3].picture.alt}}" src="{{city.cards.[3].picture.src}}">
+                    <div class="card-body">
+                        <h6 class="card-title">{{city.cards.[3].title}}</h6>
+                        <p><div class="">{{city.cards.[3].description}}</div></p>
+                        <button class="btn btn-primary" href="{{city.cards.[3].button.href}}">{{city.cards.[3].button.text}}</button>
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </section>
+
+    <hr>
+    <br>
+    <section>
+        <div>
+            <h2>{{winner.title}}</h2>
+             <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            {{winner.table.head.[0]}}
+                        </th>
+                        <th>
+                            {{winner.table.head.[1]}}
+                        </th>
+                        <th>
+                            {{winner.table.head.[2]}}
+                        </th>
+                         <th>
+                            {{winner.table.head.[3]}}
+                        </th>
+                    </tr>
+                </thead>
+
+                <body>
+                    <tr>
+                        <td>
+                            {{winner.table.user.[0].place}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[0].name}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[0].surname}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[0].nickname}}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            {{winner.table.user.[1].place}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[1].name}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[1].surname}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[1].nickname}}
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            {{winner.table.user.[2].place}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[2].name}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[2].surname}}
+                        </td>
+                        <td>
+                            {{winner.table.user.[2].nickname}}
+                        </td>
+                    </tr>
+                </body>
+            </table>
+        </div>
+    </section>
+    
+    <hr>
+    <br>
+    <section>
+        <div class="row gy-4"> 
+    
+            <h2>{{gallery.title}}</h2>
+            <br>
+
+            <div class="card col-4">
+                <div class="card-header">
+                    <b>{{winner.table.head.[1]}}</b>
+                </div>
+                    <ul class="list-group">
+                        <li class="list-group-item ">{{winner.table.user.[0].place}}</li>
+                        <li class="list-group-item ">{{winner.table.user.[0].name}}</li>  
+                        <li class="list-group-item ">{{winner.table.user.[0].surname}}</li>
+                        <li class="list-group-item ">{{winner.table.user.[0].nickname}}</li>  
+                    </ul>
+            </div>
+
+            <div class="card col-4">
+                <div class="card-header">
+                    <b>{{winner.table.head.[2]}}</b>
+                </div>
+                    <ul class="list-group">
+                        <li class="list-group-item ">{{winner.table.user.[1].place}}</li>
+                        <li class="list-group-item ">{{winner.table.user.[1].name}}</li>  
+                        <li class="list-group-item ">{{winner.table.user.[1].surname}}</li>
+                        <li class="list-group-item ">{{winner.table.user.[1].nickname}}</li>  
+                    </ul>
+            </div>
+
+            <div class="card col-4">
+                <div class="card-header">
+                    <b>{{winner.table.head.[3]}}</b>
+                </div>
+                    <ul class="list-group">
+                        <li class="list-group-item ">{{winner.table.user.[2].place}}</li>
+                        <li class="list-group-item ">{{winner.table.user.[2].name}}</li>  
+                        <li class="list-group-item ">{{winner.table.user.[2].surname}}</li>
+                        <li class="list-group-item ">{{winner.table.user.[2].nickname}}</li>  
+                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <br>
+    <section>
+        <div class="row gy-5">
+            <h2>{{relaxion.title}}</h2>   
+            <div class="col-5">
+                <div class="card text-bg-secondary">
+                    <div class="card-header">{{relaxion.cards.[0].header}}</div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{relaxion.cards.[0].title}}</h6>
+                        <p><div class="">{{relaxion.cards.[0].description}}</div></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="card text-bg-secondary">
+                    <div class="card-header">{{relaxion.cards.[1].header}}</div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{relaxion.cards.[1].title}}</h6>
+                        <p><div class="">{{relaxion.cards.[1].description}}</div></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="card text-bg-secondary">
+                    <div class="card-header">{{relaxion.cards.[2].header}}</div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{relaxion.cards.[2].title}}</h6>
+                        <p><div class="">{{relaxion.cards.[2].description}}</div></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="card text-bg-secondary">
+                    <div class="card-header">{{relaxion.cards.[3].header}}</div>
+                    <div class="card-body">
+                        <h6 class="card-title">{{relaxion.cards.[3].title}}</h6>
+                        <p><div class="">{{relaxion.cards.[3].description}}</div></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <br>
+    <section>
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header text-center">{{rest.cards.[0].header}}</div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title text-center">{{rest.cards.[0].title}}</h6>
+                        <div class="text-center">{{rest.cards.[0].description}}</div>
+                        <br>
+                        <div><button class="btn btn-primary text-center">{{rest.cards.[0].button}}</button></div>
+                        <br>
+                        <div class="card-footer text-center">{{rest.cards.[0].footer}}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+            <div class="card">
+                <div class="card-header text-center">{{rest.cards.[1].header}}</div>
+                <div class="card-body text-center">
+                    <h6 class="card-title text-center">{{rest.cards.[1].title}}</h6>
+                    <div class="text-center">{{rest.cards.[1].description}}</div>
+                    <div><button class="btn btn-primary text-center">{{rest.cards.[1].button}}</button></div>
+                    <br>
+                    <div class="card-footer text-center">{{rest.cards.[1].footer}}</div>
+                </div>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+
+    <hr>
+    <br>
+
+    <section>
+        <div class="display-2">{{proposition.title}}</div><br><br>
+        <div class="row">
+             <div class="col-5">
+                <div class="card text-bg-warning">
+                    <div class="card-header text-center text-light">{{proposition.card.[0].header}}</div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title text-center text-light">{{proposition.card.[0].title}}</h6>
+                        <div class="text-center text-light">{{proposition.card.[0].description}}</div>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="card text-bg-warning">
+                    <div class="card-header text-center text-light">{{proposition.card.[1].header}}</div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title text-center text-light">{{proposition.card.[1].title}}</h6>
+                        <div class="text-center text-light">{{proposition.card.[1].description}}</div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <hr>
+    <br>
+
+    <section>
+        <h5>{{footer.title}}</h5><br>
+        <br>
+        <div class="row gy-5">
+            
+            <div class="col-3"><a class="btn btn-link col-6" href="{{footer.navigation.[0].href}}">{{footer.navigation.[0].text}}</a></div>
+            <div class="col-3"><a class="btn btn-outline-dark col-6" href="{{footer.navigation.[1].href}}">{{footer.navigation.[1].text}}</a></div>
+            <div class="col-3"><a class="btn btn-outline-info col-6" href="{{footer.navigation.[2].href}}">{{footer.navigation.[2].text}}</a></div>
+            <div class="col-3"><a class="btn btn-link col-1"></a></div>
+            <br>
+             <div class="col-3"><a class="btn btn-link col-6" href="{{footer.socialMedia.[0].link}}">{{footer.socialMedia.[0].name}}</a></div>
+            <div class="col-3"><a class="btn btn-outline-dark col-6" href="{{footer.socialMedia.[1].link}}">{{footer.socialMedia.[1].name}}</a></div>
+            <div class="col-3"><a class="btn btn-outline-info col-6" href="{{footer.socialMedia.[2].link}}">{{footer.socialMedia.[2].name}}</a></div>
+            <div class="col-3"><a class="btn btn-link col-1"></a></div>
+            <br>
+             <div class="col-3"><a class="btn btn-link col-6" href="{{footer.partners.[0].link}}">{{footer.partners.[0].name}}</a></div>
+            <div class="col-3"><a class="btn btn-outline-dark col-6" href="{{footer.partners.[1].link}}">{{footer.partners.[1].name}}</a></div>
+            <div class="col-3"><a class="btn btn-outline-info col-6" href="{{footer.partners.[2].link}}">{{footer.partners.[2].name}}</a></div>
+        
+        </div>
+
+        
+    </section>
+    
+</main>
+
