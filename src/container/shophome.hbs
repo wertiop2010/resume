@@ -1,173 +1,43 @@
 <main>
-    <section> {{#with navigation}}
-        <div class="row mb-5">
-            <div class="card p-3">
-            
-            <div class="nav">
-                <div class="nav-item">   
-                    <a href="{{links.[0].href}}" class="nav-link">{{links.[0].text}}</a>
+    <section> 
+        {{#with navigation}}
+            <div class="row mb-5">
+                <div class="card p-3">
+                    <div class="nav">
+                    {{#each links}} 
+                        <div class="nav-item">   
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
+                        </div>
+                    {{/each}}
                 </div>
-         
-                <div class="nav-item">
-                    <a href="{{links.[1].href}}" class="nav-link">{{links.[1].text}}</a>
-                </div>
-    
-                <div class="nav-item">
-                    <a href="{{links.[2].href}}" class="nav-link">{{links.[2].text}}</a>
-                </div>
-                 <div class="nav-item">
-                    <a href="{{links.[2].href}}" class="nav-link text-muted disabled">Disable</a>
-                </div>
-              
             </div>
-        </div>{{/with}}
+        {{/with}}
     </section>
 
-    
-    
-    <section>
-        
+     
+    <section>  
         <div>
         <h1 class="text-center mb-4">Топ Статті</h1>
             {{#with newsBlock}}
                <div class="row g-2">
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[0].title}} 
-                                {{#if cards.[0].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                    
-                                {{/if}}
-                                {{#if cards.[0].isNew}}
-                                 <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                  
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[0].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[1].title}} 
-                                {{#if cards.[1].isTop}}
-                                   <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[1].isNew}}
+                    {{#each cards}}
+                        <div class="col-3 pe-2">
+                            <div class="card text-bg-dark">
+                                <div class="card-header text-light">
+                                    {{title}} 
+                                    {{#if isTop}}
+                                        <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span> 
+                                    {{/if}}
+                                    {{#if isNew}}
                                     <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[1].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[2].title}} 
-                                {{#if cards.[2].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[2].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[2].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[3].title}} 
-                                {{#if cards.[3].isTop}}
-                                   <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[3].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
+                                    {{/if}}
+                                </div>
                                 <div class="card-body">
-                                {{cards.[3].description}}
+                                    {{description}}
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[4].title}} 
-                                {{#if cards.[4].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[4].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[4].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[5].title}} 
-                                {{#if cards.[5].isTop}}
-                                   <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[5].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[5].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[6].title}} 
-                                {{#if cards.[6].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[6].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[6].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[7].title}} 
-                                {{#if cards.[7].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[7].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[7].description}}
-                            </div>
-                        </div>
-                    </div>
+                    {{/each}}
                 </div>
             {{/with}}
         </div>
@@ -177,131 +47,48 @@
    
     <section>
         {{#with goodsBlock}}
-        <div class="row g-2">
-            <div class="col-12">
-            <div class="nav nav-tabs">
-                <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[0].isActive}}active{{/if}} {{#if tabs.[0].isDisabled}}disabled{{/if}}">{{tabs.[0].text}}</a>
-                </div>
-         
-                 <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[1].isActive}}active{{/if}} {{#if tabs.[1].isDisabled}}disabled{{/if}}">{{tabs.[1].text}}</a>
-                </div>
-    
-                 <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[2].isActive}}active{{/if}} {{#if tabs.[2].isDisabled}}disabled{{/if}}">{{tabs.[2].text}}</a>
-                </div>
-               
-                <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[3].isActive}}active{{/if}} {{#if tabs.[3].isDisabled}}disabled{{/if}}">{{tabs.[3].text}}</a>
-                </div>
-        </div>
-        
+            <div class="row g-2">
+                <div class="col-12">
+                    <div class="nav nav-tabs">
+                        {{#each tabs}}
+                            <div class="nav-item col-2">   
+                                <a href="#" class="nav-link 
+                                    {{#if isActive}}active{{/if}} 
+                                    {{#if isDisabled}}disabled{{/if}}">
+                                    {{text}}
+                                </a>
+                            </div>
+                        {{/each}} 
+                    </div>   
+                </div> 
+            </div> 
+        {{/with}}
     </section>
+
     <hr class="my-5"> 
+
     <section>
+        {{#with goodsBlock}}
         <div class="row g-2">
+            {{#each cards}}
            <div class="col-4">
                 <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[0].image}}">
+                    <img class="card-img-top" alt="image" src="{{image}}">
                     <div class="card-body">
-                        <h6 class="card-title">{{cards.[0].title}}
-                            {{#if cards.[0].isHot}}
+                        <h6 class="card-title">{{title}}
+                            {{#if isHot}}
                                     <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
                             {{/if}}
-                            {{#if cards.[0].isNew}}
+                            {{#if isNew}}
                                 <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
                             {{/if}}
                         </h6>
-                        <p><div class="">{{cards.[0].description}}</div></p>
+                        <p><div class="">{{description}}</div></p>
+                    
                     </div>
                 </div>
             </div>
-
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[1].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[1].title}}
-                            {{#if cards.[1].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[1].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[1].description}}</div></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[0].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[2].title}}
-                            {{#if cards.[2].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[2].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[2].description}}</div></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[0].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[3].title}}
-                            {{#if cards.[3].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[3].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[3].description}}</div></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[4].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[4].title}}
-                            {{#if cards.[4].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[4].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[4].description}}</div></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[5].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[5].title}}
-                            {{#if cards.[5].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[5].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[5].description}}</div></p>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
       {{/with}}
     </section>
@@ -311,18 +98,21 @@
     <section>
         {{#with subscribe}}
         <div class="row g-2">
-           <div class="col-12">
+           <div class="col-12"> 
                 <div class="card text-bg-dark">
                     <div class="card-body">
                         <h6 class="card-title">{{header}}</h6>
                         <p><div class="">{{description}}</div></p>
-                        <button class="btn btn-primary text-center mb-3" href="{{buttons.[0].link}}">{{buttons.[0].text}}</button><br>
-                        <button class="btn btn-primary text-center" href="{{buttons.[1].link}}">{{buttons.[1].text}}</button>
+                        {{#each buttons}}
+                        <button class="btn btn-primary text-center mb-3" href="{{link}}">{{text}}</button><br>
+                        {{/each}}
                     </div>
-                </div>
+               </div>
             </div>
         </div>
         {{/with}}
     </section>
+
     <hr class="my-5"> 
+
 </main>   
