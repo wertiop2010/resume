@@ -1,328 +1,223 @@
-<main>
-    <section> {{#with navigation}}
-        <div class="row mb-5">
-            <div class="card p-3">
-            
-            <div class="nav">
-                <div class="nav-item">   
-                    <a href="{{links.[0].href}}" class="nav-link">{{links.[0].text}}</a>
-                </div>
-         
-                <div class="nav-item">
-                    <a href="{{links.[1].href}}" class="nav-link">{{links.[1].text}}</a>
-                </div>
-    
-                <div class="nav-item">
-                    <a href="{{links.[2].href}}" class="nav-link">{{links.[2].text}}</a>
-                </div>
-                 <div class="nav-item">
-                    <a href="{{links.[2].href}}" class="nav-link text-muted disabled">Disable</a>
-                </div>
-              
-            </div>
-        </div>{{/with}}
-    </section>
-
-    
-    
-    <section>
-        
-        <div>
-        <h1 class="text-center mb-4">Топ Статті</h1>
-            {{#with newsBlock}}
-               <div class="row g-2">
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[0].title}} 
-                                {{#if cards.[0].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                    
-                                {{/if}}
-                                {{#if cards.[0].isNew}}
-                                 <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                  
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[0].description}}
-                            </div>
+<div class="row">
+    <div class="col-8"> 
+        <section> 
+            {{#with navigation}}
+                <div class="card  p-3">
+                    <div class="nav">
+                    {{#each links}} 
+                        <div class="nav-item">   
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
                         </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[1].title}} 
-                                {{#if cards.[1].isTop}}
-                                   <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[1].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[1].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[2].title}} 
-                                {{#if cards.[2].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[2].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[2].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[3].title}} 
-                                {{#if cards.[3].isTop}}
-                                   <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[3].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[3].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[4].title}} 
-                                {{#if cards.[4].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[4].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                            <div class="card-body">
-                                {{cards.[4].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[5].title}} 
-                                {{#if cards.[5].isTop}}
-                                   <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[5].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[5].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[6].title}} 
-                                {{#if cards.[6].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[6].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[6].description}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-3 pe-2">
-                        <div class="card text-bg-dark">
-                            <div class="card-header text-light">
-                                {{cards.[7].title}} 
-                                {{#if cards.[7].isTop}}
-                                    <span class="badge text-bg-danger rounded-pill mb-3 btn-sm"><b>Топ</b></span>
-                                {{/if}}
-                                {{#if cards.[7].isNew}}
-                                    <span class="badge text-bg-success rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                                {{/if}}
-                            </div>
-                                <div class="card-body">
-                                {{cards.[7].description}}
-                            </div>
-                        </div>
-                    </div>
+                    {{/each}}
                 </div>
             {{/with}}
-        </div>
-    </section>
+        </section>
 
-    <hr class="my-5">   
-   
-    <section>
-        {{#with goodsBlock}}
-        <div class="row g-2">
-            <div class="col-12">
-            <div class="nav nav-tabs">
-                <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[0].isActive}}active{{/if}} {{#if tabs.[0].isDisabled}}disabled{{/if}}">{{tabs.[0].text}}</a>
+
+        <section> 
+            <h1 class="mb-4">{{header}}</h1>
+            {{#with contacts_data}}
+            <h5 class="card-title mb-3">{{title}}</h5> 
+            {{#each buttons}}
+            <button class="btn me-3 {{#if isPrimary}} btn-warning text-light{{/if}} 
+            {{#if isOutline}} btn-outline-warning {{/if}} text-center mb-3"><b>{{text}}</b>
+            </button>
+            {{/each}}
+        </section>
+
+        <section>
+            <div class="row">
+                <div class="col-6 mb-3"> 
+                {{#with form}}
+                    {{#with input}}              
+                        {{#with surname}}
+                        <label class="form-label"><b>{{label}}</b></label>
+                        <input class="form-control" placeholder="{{placeholder}}">
+                        <div class="form-text"><small>{{caption}}</small></div>
+                        {{/with}}
                 </div>
-         
-                 <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[1].isActive}}active{{/if}} {{#if tabs.[1].isDisabled}}disabled{{/if}}">{{tabs.[1].text}}</a>
-                </div>
-    
-                 <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[2].isActive}}active{{/if}} {{#if tabs.[2].isDisabled}}disabled{{/if}}">{{tabs.[2].text}}</a>
-                </div>
+
                
-                <div class="nav-item col-2">   
-                    <a href="#" class="nav-link {{#if tabs.[3].isActive}}active{{/if}} {{#if tabs.[3].isDisabled}}disabled{{/if}}">{{tabs.[3].text}}</a>
+                <div class="col-6 mb-3">
+                    {{#with name}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
                 </div>
-        </div>
-        
-    </section>
-    <hr class="my-5"> 
-    <section>
-        <div class="row g-2">
-           <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[0].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[0].title}}
-                            {{#if cards.[0].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[0].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[0].description}}</div></p>
+          
+                 <div class="col-6">
+                    {{#with phone}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
+                </div>
+
+                 <div class="col-6">
+                    {{#with email}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
+                </div>
+                  {{/with}}
+                 
+            </div>
+        </section>
+   
+        <hr class="my-2">
+
+        <section>
+            <div class="row">
+                <div class="col-6 mb-3"> 
+                {{#each switch}}
+                    <div class="form-check form-switch btn-lg">
+                        <label class="form-check-label">{{text}}</label>
+                        <input {{#if isActive}}active
+                        {{else}}disabled{{/if}} name="food" type="checkbox" class="form-check-input">
                     </div>
+                {{/each}}
                 </div>
             </div>
+            {{/with}}
+            {{/with}}
+        </section>
 
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[1].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[1].title}}
-                            {{#if cards.[1].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[1].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[1].description}}</div></p>
+        <hr class="my-2">
+
+        <section>
+            {{#with delivery}}
+            <div class="row">    
+                <div class="col-12 mb-3">
+                    <h2 class="mb-4"><b>{{title}}</b></h2>
+                    <div class="card  p-3">    
+                        {{#each select}}
+                        <div class="col-5">
+                            <label class="form-label"><b>{{label}}</b></label>
+                            <select class="form-select">
+                                <option selected>{{placeholder}}</option>
+                                {{#each options}} <option value="{{value}}">{{text}}</option>{{/each}}
+                            </select>
+                        </div>
+                        {{/each}}
                     </div>
-                </div>
+                </div> 
             </div>
+           
+        </section>
 
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[0].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[2].title}}
-                            {{#if cards.[2].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[2].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[2].description}}</div></p>
+        <section>
+            <div class="col-12">{{#each delivery_type}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{type}}</label>
+                        <input name="delivery_type" type="radio" class="form-check-input">
                     </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[0].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[3].title}}
-                            {{#if cards.[3].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[3].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[3].description}}</div></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[4].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[4].title}}
-                            {{#if cards.[4].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[4].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[4].description}}</div></p>
-                    </div>
-                </div>
+            {{/each}}
             </div>
             
-            <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" alt="image" src="{{cards.[5].image}}">
-                    <div class="card-body">
-                        <h6 class="card-title">{{cards.[5].title}}
-                            {{#if cards.[5].isHot}}
-                                    <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
-                            {{/if}}
-                            {{#if cards.[5].isNew}}
-                                <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
-                            {{/if}}
-                        </h6>
-                        <p><div class="">{{cards.[5].description}}</div></p>
-                    </div>
+        </section>  
+
+         <hr class="my-2">
+
+        <section>
+            {{#with payment}}
+            <div class="col-12">{{#each list}}
+                <div class="form-label">{{title}}</div>
+                <div class="form-check">
+                    <label class="form-check-label">{{type}}</label>
+                    <input name="payment" type="radio" class="form-check-input">
+                     <div class="form-text"><small>{{description}}</small></div>
+                </div>{{/each}}
+                 {{/with}}
+            </div>
+            
+        </section>
+
+        <hr class="my-2">
+
+         <section>
+            {{#with contact}}
+            <div class="row">
+                 <h1 class="mb-4">{{title}}</h1>
+                <div class="col-6 mb-3">              
+                        {{#with surname}}
+                        <label class="form-label"><b>{{label}}</b></label>
+                        <input class="form-control" placeholder="{{placeholder}}">
+                        <div class="form-text"><small>{{caption}}</small></div>
+                        {{/with}}
+                </div>
+
+               
+                <div class="col-6 mb-3">
+                    {{#with name}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
+                </div>
+          
+                 <div class="col-6">
+                    {{#with phone}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
+                </div>
+
+                 <div class="col-6">
+                    {{#with email}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
                 </div>
             </div>
-        </div>
-      {{/with}}
-    </section>
+            {{/with}} 
+            {{/with}}
+        </section>
+    </div>
 
-    <hr class="my-5"> 
-
-    <section>
-        {{#with subscribe}}
-        <div class="row g-2">
-           <div class="col-12">
-                <div class="card text-bg-dark">
-                    <div class="card-body">
-                        <h6 class="card-title">{{header}}</h6>
-                        <p><div class="">{{description}}</div></p>
-                        <button class="btn btn-primary text-center mb-3" href="{{buttons.[0].link}}">{{buttons.[0].text}}</button><br>
-                        <button class="btn btn-primary text-center" href="{{buttons.[1].link}}">{{buttons.[1].text}}</button>
-                    </div>
-                </div>
+   
+    <div class="col-4">
+       
+        <div class="card mt-5">
+            <div class="card-body"> 
+                {{#each action_block}}
+                <button class="btn 
+                {{#if isSuccess}}btn-success{{/if}}  
+                {{#if isDanger}}btn-danger{{/if}} 
+                {{#if isInfo}}btn-info{{/if}} my-1">
+                {{text}}</button><br>
+                {{/each}}
             </div>
         </div>
-        {{/with}}
-    </section>
-    <hr class="my-5"> 
-</main>   
+
+        <div class="card mt-5">
+            <div class="card-body">
+                {{#with total}} 
+                    <h3 class="card-title">{{title}}</h3>
+                    {{#each item_list}}
+                    <p><div class="">{{name}}: {{price}}</div></p>
+                    {{/each}}
+                    <hr class="my-1">
+                    {{#each additional_info}}
+                    <p><div class="">{{text}}: {{value}}</div></p>
+                    {{/each}}
+                    <hr class="my-1">
+                    {{#with total_price}}
+                    <p><div class="">{{text}}: {{value}}</div></p>
+                    {{/with}}
+                    <hr class="my-1">
+                    {{#each button}}
+                    <button class="btn 
+                    {{#if isPrimary}}btn-primary{{/if}}  
+                    {{#if isOutline}}btn-outline-primary{{/if}} my-1">
+                    {{text}}</button><br>
+                    {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+     <hr class="my-5"> 
+</div>   
