@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-8"> 
+     
         <section> 
             {{#with navigation}}
                 <div class="card  p-3">
@@ -12,7 +12,7 @@
                 </div>
             {{/with}}
         </section>
-
+    <div class="col-8">
 
         <section> 
             <h1 class="mb-4">{{header}}</h1>
@@ -220,4 +220,35 @@
         </div>
     </div>
      <hr class="my-5"> 
+
+    <div>  
+        <div class="nav">  
+        {{#each footer.[0]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+        <div class="nav">  
+        {{#each footer.[1]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+        <div class="nav">  
+        {{#each footer.[2]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+        <div class="nav">  
+        {{#each footer.[3]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+    </div>
 </div>   
