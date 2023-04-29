@@ -1,21 +1,18 @@
-
 <div class="row">
-    <div class="col-12 mt-3"> 
-        {{#with navigation}}
-            <div class="card  p-3">
-                <div class="nav">
-                {{#each links}} 
-                    <div class="nav-item">   
-                        <a href="{{href}}" class="nav-link">{{text}}</a>
-                    </div>
-                {{/each}}
+        <section> 
+            {{#with navigation}}
+                <div class="card  p-3">
+                    <div class="nav">
+                    {{#each links}} 
+                        <div class="nav-item">   
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
+                        </div>
+                    {{/each}}
                 </div>
-            </div>
-        {{/with}}
-    </div>
+            {{/with}}
+        </section>
 
-    
-    <div class="col-8"> 
+    <div class="col-8">
         <section> 
             <h1 class="mb-4">{{header}}</h1>
             {{#with contacts_data}}
@@ -32,41 +29,42 @@
                 <div class="col-6 mb-3"> 
                 {{#with form}}
                     {{#with input}}              
-                            {{#with surname}}
-                            <label class="form-label"><b>{{label}}</b></label>
-                            <input class="form-control" placeholder="{{placeholder}}">
-                            <div class="form-text"><small>{{caption}}</small></div>
-                            {{/with}}
-                    </div>
+                        {{#with surname}}
+                        <label class="form-label"><b>{{label}}</b></label>
+                        <input class="form-control" placeholder="{{placeholder}}">
+                        <div class="form-text"><small>{{caption}}</small></div>
+                        {{/with}}
+                </div>
 
-                
-                    <div class="col-6 mb-3">
-                        {{#with name}}
-                        <label class="form-label"><b>{{label}}</b></label>
-                        <input class="form-control" placeholder="{{placeholder}}">
-                        <div class="form-text"><small>{{caption}}</small></div>
-                        {{/with}}
-                    </div>
-            
-                    <div class="col-6">
-                        {{#with phone}}
-                        <label class="form-label"><b>{{label}}</b></label>
-                        <input class="form-control" placeholder="{{placeholder}}">
-                        <div class="form-text"><small>{{caption}}</small></div>
-                        {{/with}}
-                    </div>
-
-                    <div class="col-6">
-                        {{#with email}}
-                        <label class="form-label"><b>{{label}}</b></label>
-                        <input class="form-control" placeholder="{{placeholder}}">
-                        <div class="form-text"><small>{{caption}}</small></div>
-                        {{/with}}
-                    </div>
+               
+                <div class="col-6 mb-3">
+                    {{#with name}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
                     {{/with}}
+                </div>
+          
+                 <div class="col-6">
+                    {{#with phone}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
+                </div>
+
+                 <div class="col-6">
+                    {{#with email}}
+                    <label class="form-label"><b>{{label}}</b></label>
+                    <input class="form-control" placeholder="{{placeholder}}">
+                    <div class="form-text"><small>{{caption}}</small></div>
+                    {{/with}}
+                </div>
+                  {{/with}}
+                 
             </div>
         </section>
-
+   
         <hr class="my-2">
 
         <section>
@@ -105,7 +103,7 @@
                     </div>
                 </div> 
             </div>
-        
+           
         </section>
 
         <section>
@@ -119,7 +117,7 @@
             
         </section>  
 
-        <hr class="my-2">
+         <hr class="my-2">
 
         <section>
             {{#with payment}}
@@ -128,19 +126,19 @@
                 <div class="form-check">
                     <label class="form-check-label">{{type}}</label>
                     <input name="payment" type="radio" class="form-check-input">
-                    <div class="form-text"><small>{{description}}</small></div>
+                     <div class="form-text"><small>{{description}}</small></div>
                 </div>{{/each}}
-                {{/with}}
+                 {{/with}}
             </div>
             
         </section>
 
         <hr class="my-2">
 
-        <section>
+         <section>
             {{#with contact}}
             <div class="row">
-                <h1 class="mb-4">{{title}}</h1>
+                 <h1 class="mb-4">{{title}}</h1>
                 <div class="col-6 mb-3">              
                         {{#with surname}}
                         <label class="form-label"><b>{{label}}</b></label>
@@ -149,7 +147,7 @@
                         {{/with}}
                 </div>
 
-            
+               
                 <div class="col-6 mb-3">
                     {{#with name}}
                     <label class="form-label"><b>{{label}}</b></label>
@@ -157,8 +155,8 @@
                     <div class="form-text"><small>{{caption}}</small></div>
                     {{/with}}
                 </div>
-        
-                <div class="col-6">
+          
+                 <div class="col-6">
                     {{#with phone}}
                     <label class="form-label"><b>{{label}}</b></label>
                     <input class="form-control" placeholder="{{placeholder}}">
@@ -166,7 +164,7 @@
                     {{/with}}
                 </div>
 
-                <div class="col-6">
+                 <div class="col-6">
                     {{#with email}}
                     <label class="form-label"><b>{{label}}</b></label>
                     <input class="form-control" placeholder="{{placeholder}}">
@@ -179,10 +177,9 @@
         </section>
     </div>
 
-
-
+   
     <div class="col-4">
-    
+       
         <div class="card mt-5">
             <div class="card-body"> 
                 {{#each action_block}}
@@ -221,6 +218,36 @@
             </div>
         </div>
     </div>
-   
      <hr class="my-5"> 
+
+    <div>  
+        <div class="nav">  
+        {{#each footer.[0]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+        <div class="nav">  
+        {{#each footer.[1]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+        <div class="nav">  
+        {{#each footer.[2]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+        <div class="nav">  
+        {{#each footer.[3]}}  
+            <div class="nav-item col-2"> 
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div> 
+        {{/each}}
+        </div>
+    </div>
 </div>   
