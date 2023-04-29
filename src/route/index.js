@@ -1511,6 +1511,8 @@ router.get('/shophome', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
     layout: 'shop',
+
+    header,
     navigation: {
       links: [
         {
@@ -1800,6 +1802,8 @@ router.get('/shoporder', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
     layout: 'shop',
+
+    header,
     navigation: {
       links: [
         {
