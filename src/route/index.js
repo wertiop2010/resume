@@ -1527,6 +1527,10 @@ router.get('/shophome', function (req, res) {
           text: 'Help',
           href: 'https://www.youtube.com/',
         },
+        {
+          text: 'Exit',
+          href: null,
+        },
       ],
     },
 
