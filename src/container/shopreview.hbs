@@ -1,0 +1,157 @@
+<div class="row">
+    <div class="col-12">
+        <section> 
+            {{#with navigation}}
+                <div class="card  p-3">
+                    <div class="nav">
+                    {{#each links}} 
+                        <div class="nav-item ">   
+                            <a href="{{href}}" class="nav-link {{#unless href}}disabled{{/unless}}">{{text}}</a>
+                        </div>
+                    {{/each}}
+                    </div>
+                </div>
+            {{/with}}
+        </section>
+    </div>
+
+    <div class="col-8">
+        <section> 
+            {{#with formBlock}}
+                <h1 class="mb-4">{{header}}</h1> 
+            {{#with rating}}
+                <p>{{title}}: {{value}}</p>
+            {{/with}}
+            <hr class="my-5">
+        </section>
+   
+        <section> 
+            {{#with actionBlock}}
+            <div class="">
+                <div class="nav nav-tabs">
+                    {{#each tabs}} <div class="nav-item mx-5">  
+                        <a href="#" class="nav-link {{#if isActive}}active{{/if}}">   {{text}}   </a>
+                    </div>{{/each}}
+                </div>
+            </div>
+        </section>
+
+        <section>
+        {{#with report}}
+            <div class="card my-5">
+                <div class="card-body">
+                    <h6 class="card-title">{{title}}</h6>
+                    
+                    {{#with button}}
+                    <button class="btn btn-secondary mb-3" href="{{link}}">{{text}}</button><br>
+                    {{/with}}
+                </div>
+            </div>
+            <hr class="my-5"> 
+        {{/with}}
+        {{/with}}
+        
+        </section>
+
+        <section>
+            {{#with feedbackBlock}}
+            <div class="mb-4"><h2>{{title}}</h2></div>
+            {{#each buttons}}
+            <button href="{{link}}" class="btn 
+            {{#if isWarning}}btn-warning{{/if}} 
+            {{#if isSuccess}}btn-success{{/if}}
+            {{#if isDanger}}btn-danger{{/if}}">{{text}}
+            </button>
+            {{/each}}
+            {{/with}}
+        
+        </section>
+    </div> 
+    
+    <div class="col-4">
+        <div class="card">
+             {{#with goodsInfo}}
+            <img class="card-img-top " alt="image" src="{{photo}}">
+            <div class="card-body">
+                <h3 class="card-title ">{{name}}</h3>
+            </div>
+        </div>
+        <div class="card my-3">
+            <h3 class="card-title ms-4 mt-2">{{price}}</h3>
+            <div class="card-body">
+                <p>{{#if inMarket}}Є в нвявності{{/if}}</p>
+                 {{#each buttons}}
+                <button href="{{link}}" class="btn 
+                    {{#if isPrimary}}btn-primary{{/if}} 
+                    {{#if isSecondary}}btn-secondary{{/if}} my-1">{{text}}
+                </button><br>
+            {{/each}}
+            </div>
+        </div>
+        <div class="card my-3">
+            <div class="card-body">
+                {{#with seller}}
+                <p>{{title}}: <b>{{value}}</b></p>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/with}} 
+{{/with}} 
+
+
+<div class="row">
+    <div class="col-12">
+        <hr class="my-5"> 
+       {{> reviewItem}}
+
+
+        <section>
+        {{#with service}}
+            <div class="card text-bg-success">
+                <div class="card-body text-center">
+                    <h2 class="card-title">{{title}}</h2>
+                    <p><div class="">{{description}}</div></p>
+                    {{#each buttons}}
+                    <button class="btn btn-primary mb-3" href="{{link}}">{{text}}</button><br>
+                    {{/each}}
+                </div>
+            </div>
+        {{/with}}
+        </section>
+
+        
+
+        <section>
+            <div class="nav">  
+                {{#each footer.[0]}}  
+                <div class="nav-item col-2"> 
+                    <a href="{{link}}" class="nav-link">{{text}}</a>
+                </div> 
+            {{/each}}
+            </div>
+            <div class="nav">  
+            {{#each footer.[1]}}  
+                <div class="nav-item col-2"> 
+                    <a href="{{link}}" class="nav-link">{{text}}</a>
+                </div> 
+            {{/each}}
+            </div>
+            <div class="nav">  
+            {{#each footer.[2]}}  
+                <div class="nav-item col-2"> 
+                    <a href="{{link}}" class="nav-link">{{text}}</a>
+                </div> 
+            {{/each}}
+            </div>
+            <div class="nav">  
+            {{#each footer.[3]}}  
+                <div class="nav-item col-2"> 
+                    <a href="{{link}}" class="nav-link disabled" >{{text}}</a>
+                </div> 
+                {{/each}}
+            </div>
+        </section>
+    </div>
+</div>  
