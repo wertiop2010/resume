@@ -1,0 +1,160 @@
+<main class="p-1">
+    <div class="row">
+        
+        <div class="col-12">
+            {{> linkNew}}
+        </div>
+    
+
+
+        <div class="col-12">
+            <ol class="breadcrumb">{{#each breadcrumb}}
+                <li class="breadcrumb-item">
+                    <a {{#if url}}href="{{url}}"{{/if}}>{{name}}</a>
+                </li>{{/each}}
+            </ol>
+        </div>
+
+        
+        <div class="my-4"><h2>{{header}}</h2></div>
+        <div class="row">
+            {{#each sortBlock}}
+            <div class="col-3">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>{{placeholder}}</option>
+                    {{#each options}}
+                    <option value="{{value}}">{{text}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            {{/each}}
+        </div>
+    </div> 
+
+
+    <div class="row">
+        <div class="col-4 pe-3">
+            <div class="card my-5">
+                {{#with filterBlock}}
+                {{#with sellers}}
+                <label class="form-label my-4 ms-3"><b>{{title}}</b></label>
+                    {{#each list}}
+                    <div class="form-check ms-3 my-2">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="boot" type="checkbox" class="form-check-input">
+                    </div>
+                {{/each}} 
+                <hr class="my-2"> 
+                {{/with}}
+            
+                {{#with brands}}
+                <label class="form-label my-4 ms-3"><b>{{title}}</b></label>
+                    {{#with input}}
+                    <div class="mb-3 ms-3">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{placeholder}}">
+                    </div>
+                    {{/with}}
+                    {{#each options}}
+                    <div class="form-check my-2 ms-3">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="boot" type="checkbox" class="form-check-input">
+                    </div>
+                {{/each}} 
+                <hr class="my-2 ms-3"> 
+                {{/with}}
+                {{#with price}}
+                <p class="ms-3"><b>{{title}}</b></p>
+                {{#with range}}
+                    <div class="mb-3 ms-3">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{from}}">
+                    </div>
+                    <div class="mb-3 ms-3">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{to}}">
+                    </div>
+                {{/with}}
+                {{#with button}}
+                    <button class="btn btn-light btn-outline-secondary mb-3 ms-3 col-2" href="{{link}}">{{text}}</button><br>
+                    <hr class="my-2 ms-3"> 
+                {{/with}}
+                {{/with}}
+                {{#each filterList}}
+                <p class="ms-3 ms-3"><b>{{title}}</b></p>
+                {{#each options}}
+                <div class="form-check my-2 ms-3">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="boot" type="checkbox" class="form-check-input">
+                </div>
+                    
+                {{/each}}
+                <hr class="my-2"> 
+                {{/each}} 
+                {{/with}}
+            </div>   
+        </div>
+        
+        <div class="col-8">
+            <div class="row">
+                {{#each goodsList}}
+                    <div class="col-6 mt-5 px-3">
+                    <div class="card">
+                        <img class="card-img-top" alt="image" src="{{img}}">
+                        <div class="card-body">
+                            <h6 class="card-title">{{title}}
+                                {{#if isHot}}
+                                        <span class="badge text-bg-warning text-center rounded-pill mb-3 btn-sm"><b>Hot!</b></span>
+                                {{/if}}
+                                {{#if isNew}}
+                                    <span class="badge text-bg-primary rounded-pill mb-3 btn-sm"><b>Нова</b></span>
+                                {{/if}}
+                                {{#if isFast}}
+                                    <span class="badge text-bg-success  mb-3 btn-lg"><b>Швидка доставка</b></span>
+                                {{/if}}
+                                {{#if isFree}}
+                                    <span class="badge text-bg-secondary  mb-3 btn-lg"><b>Безкоштовна доставка</b></span>
+                                {{/if}}
+                            
+                            <p><h5>{{name}}</h5></p>
+                            </h6>
+                            {{#with review}}
+                            <p>{{amount}} {{text}}</p>
+                            {{/with}}
+                            <p><h3>{{price}}</h3></p>
+                            <p>{{delivery}}</p>
+                            {{#each buttons}}
+                            <button class="btn {{#if isPrimary}}btn-primary{{/if}} {{#if isSecondary}}btn btn-secondary{{/if}} my-2" href="link">{{text}}</button><br>
+                            {{/each}}
+                            {{#each characteristics}}
+                            <ul>
+                                <li>
+                                    {{title}}: {{value}}
+                                </li>
+                            </ul>
+                            {{/each}}
+                        </div>
+                    </div></div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <hr class="my-5"> 
+            <section>
+            {{#with service}}
+                <div class="card text-bg-success">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">{{title}}</h2>
+                        <p><div class="">{{description}}</div></p>
+                        {{#each buttons}}
+                        <button class="btn btn-primary mb-3" href="{{link}}">{{text}}</button><br>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/with}}
+            </section>
+
+        {{> footerNew}}
+        </div>
+    </div>
+</main>
