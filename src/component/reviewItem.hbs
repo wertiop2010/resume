@@ -19,7 +19,8 @@
                         {{#with rating}}
                         <p><div class="">{{title}}: {{value}}</div></p>
                         {{/with}}
-                       <p>{{text}}</p>
+                        {{#each text}}<p>{{this}}</p>
+                        {{/each}}
                         {{#with advantages}}
                         <p><div class=""><b>{{title}}:</b></div></p>
                         <p><div class="">{{text}}</div></p>
