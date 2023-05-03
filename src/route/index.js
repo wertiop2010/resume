@@ -2763,7 +2763,6 @@ router.get('/shopcatalog', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
-
     layout: 'shop',
 
     navigation: {
@@ -3116,19 +3115,19 @@ router.get('/shopcatalog', function (req, res) {
       [
         {
           text: 'Report History',
-          link: 'https://www.youtube.com/feed/history/report_history',
+          link: null,
         },
         {
           text: 'Help',
-          link: 'https://support.google.com/youtube/?hl=en',
+          link: null,
         },
         {
           text: 'Send Feedback',
-          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+          link: null,
         },
         {
           text: 'About',
-          link: 'https://www.youtube.com/about/',
+          link: null,
         },
       ],
     ],
