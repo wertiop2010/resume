@@ -1,33 +1,3 @@
- <section>
-            <div class="nav">  
-                {{#each footer.[0]}}  
-                <div class="nav-item col-2"> 
-                    <a href="{{link}}" class="nav-link">{{text}}</a>
-                </div> 
-            {{/each}}
-            </div>
-
-            <div class="nav">  
-            {{#each footer.[1]}}  
-                <div class="nav-item col-2"> 
-                    <a href="{{link}}" class="nav-link">{{text}}</a>
-                </div> 
-            {{/each}}
-            </div>
-
-            <div class="nav">  
-            {{#each footer.[2]}}  
-                <div class="nav-item col-2"> 
-                    <a href="{{link}}" class="nav-link">{{text}}</a>
-                </div> 
-            {{/each}}
-            </div>
-
-            <div class="nav">  
-            {{#each footer.[3]}}  
-                <div class="nav-item col-2"> 
-                    <a href="{{link}}" class="nav-link disabled" >{{text}}</a>
-                </div> 
-                {{/each}}
-            </div>
-        </section>
+<div class="nav-item col-3">   
+    <a href="{{link}}" class="nav-link {{#unless link}}disabled{{/unless}}">{{text}}</a><br>
+</div>
