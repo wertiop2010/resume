@@ -1,68 +1,75 @@
-<div>
+
      {{#with person}}   
           <main>
                <section>
-                    <h1>{{name}}</h1>
-                    <div>
-                         Age: {{age}}
-                         <br>
-                         Gender: {{gender}}
-                         <br>
-                         <br>
+                    <div class="card text-bg-success col-3 m-2 p-3 my-5">
+                         <h1>{{name}}</h1>
                          <div>
-                              <div><b>Address:</b></div>
+                              Age: {{age}}
                               <br>
-                              <div>
-                                   <address>
-                                        {{#with address}}
-                                        Street: {{street}}
-                                        <br>
-                                        City: {{city}}
-                                        <br>
-                                        State: {{state}}
-                                        <br>
-                                        Zip: {{zip}}
-                                        <br>
-                                        Country: {{country}}
-                                        {{/with}}
-                                   </address>
-                              </div>
+                              Gender: {{gender}}
+                              <br>
+                              <br>
                          </div>
                     </div>
-                    <br>
-                    <ul>
-                    {{#each education}}
-                         <li>
-                              <div>
-                                   <div><strong>Education:</strong></div>
+                    <div class="card text-bg-secondary col-3 m-2 p-3 my-5">
+                         <div class="my-2"><b>Address:</b>
+                         </div>
+                         <br>
+                         <div>
+                              <address>
+                                   {{#with address}}
+                                   Street: {{street}}
                                    <br>
+                                   City: {{city}}
+                                   <br>
+                                   State: {{state}}
+                                   <br>
+                                   Zip: {{zip}}
+                                   <br>
+                                   Country: {{country}}
+                                   {{/with}}
+                              </address>
+                         
+                         </div>
+                    </div>
+                    <div class="card text-bg-secondary col-3 m-2 p-3 my-5">
+                         <ul>
+                         {{#each education}}
+                              <li>
                                    <div>
-                                        Degree: {{degree}}
+                                        <div><strong>Education:</strong>
+                                        </div>
                                         <br>
-                                        Major: {{major}}
-                                        <br>
-                                        University: {{university}}
-                                        <br>
-                                        Graduation year: ({{graduationYear}})
-                                        <br>
+                                        <div>
+                                             Degree: {{degree}}
+                                             <br>
+                                             Major: {{major}}
+                                             <br>
+                                             University: {{university}}
+                                             <br>
+                                             Graduation year: ({{graduationYear}})
+                                             <br>
+                                        </div>
                                    </div>
-                              </div>
-                         </li>
-                    {{/each}}
-                    </ul>
-                    <br>
+                              </li>
+                         {{/each}}
+                         </ul>
+                    </div>
+                    <div class="card text-bg-secondary col-4 m-2 p-3 my-5">
                     <ul>
                          {{#each workExperience}}
                               <li>
                                    <div>
-                                        <div><strong>Work experiance:</strong></div>
+                                        <div><strong>Work experiance:</strong>
+                                        </div>
                                         <br>
                                         <div>
                                         Company: {{company}} ({{title}})
                                         <br>
                                         {{startDate}} - {{endDate}}
-                                        <br>
                                         
+                                        </div>
                                         <ul>
                                              {{#each responsibilities}}
                                                   <li><article>{{this}}</article></li>
@@ -172,7 +179,7 @@
                               </li>
                          {{/each}}
                     </ul>
+                         </div>
                </section>
           </main>
      {{/with}}
-</div>

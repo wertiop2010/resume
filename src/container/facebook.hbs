@@ -1,10 +1,12 @@
 <div>
     <main>
         <section>
-            <div>
-                <h1>{{name}}</h1>
+            <h1>{{name}}</h1>
+            
                 <ul>
+                    
                     {{#each users}}
+                    <div class="card col-2 p-3 my-3 text-bg-primary">
                        <span class="badge rounded-pill text-bg-danger">Users: </span> 
                         <li>
                             ID: {{id}}
@@ -19,8 +21,13 @@
                             age: {{age}}
                         </li>
                         <li>
-                            <ul>
+                </ul>
+            </div>
+            
+                        <ul>
+
                             {{#each friends}}
+                            <div class="card col-2 p-3 my-3 ms-5 text-bg-primary">
                             <span class="badge rounded-pill text-bg-success">friends: </span>
                                 <li>
                                 ID: {{id}}
@@ -33,31 +40,35 @@
                                 </li>
                                 <li>
                                     age: {{age}}
-                                </li>
-                                <li>
-                                    <ul>
-                                    {{#each mutual_friends}}
-                                    <span class="badge rounded-pill text-bg-primary">mutual_friends: </span> 
-                                        <li>
-                                        ID: {{id}}
-                                        </li>
-                                        <li>
-                                            name: {{name}}
-                                        </li>
-                                        <li>
-                                            gender: {{gender}}
-                                        </li>
-                                        <li>
-                                            age: {{age}}
-                                        </li>
-                                    {{/each}}
-                                    </ul>
-                                </li>
-                            {{/each}}
-                            </ul>
+                                </li> 
+                        </ul>
+            </div>
+            <div class="card col-2 p-3 my-3 text-bg-primary">
+                                
+                <ul>
+                {{#each mutual_friends}}
+                <span class="badge rounded-pill text-bg-danger">mutual_friends: </span> 
+                    <li>
+                    ID: {{id}}
+                    </li>
+                    <li>
+                        name: {{name}}
+                    </li>
+                    <li>
+                        gender: {{gender}}
+                    </li>
+                    <li>
+                        age: {{age}}
+                    </li>
+
+                {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+            <div class="card col-2 p-3 my-3 ms-5 text-bg-primary">                 
                             <ul>
                             {{#each groups}}
-                                <span class="badge rounded-pill text-bg-primary">groups: </span>
+                                <span class="badge rounded-pill text-bg-warning">groups: </span>
                                 <li>
                                     ID: {{id}}
                                 </li>
@@ -88,6 +99,7 @@
                                 </li>
                             {{/each}}
                             </ul>
+            </div> 
                         </li>
                     {{/each}}
                 </ul>
@@ -95,8 +107,3 @@
         </section>
     </main>
 </div>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}

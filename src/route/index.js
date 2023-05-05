@@ -41,19 +41,97 @@ router.get('/', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {
-    summary: {
-      title: 'Summary',
-      text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
-            work on a new project I learn the domain and try to understand the idea of the project. Good team
-            player, every colleague is a friend to me.`,
+    header: {
+      name: 'Торкіт Микола',
+      work: 'Resume project',
     },
-
-    experience: {
-      title: 'Other experience',
-      text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
-            tournament position, goals etc), analyzing by simple mathematics models and preparing probability
-            for such events like: money line - first win / draw / second win, totals etc.`,
-    },
+    awards: 'Список сторінок',
+    description: [
+      'Проект створено в процесі навчання',
+      'Сторінки додавав після кожного завдання',
+    ],
+    href: [
+      {
+        text: 'Shopreview',
+        link: '/shopreview',
+        isPrimary: true,
+      },
+      {
+        text: 'Shoporder',
+        link: '/shoporder',
+        isPrimary: true,
+      },
+      {
+        text: 'Shopcatalog',
+        link: '/shopcatalog',
+        isPrimary: true,
+      },
+      {
+        text: 'Shopcart',
+        link: '/shopcart',
+        isPrimary: true,
+      },
+      {
+        text: 'Shophome',
+        link: '/shophome',
+        isPrimary: true,
+      },
+      {
+        text: 'Bio',
+        link: '/bio',
+        isPrimary: true,
+      },
+      {
+        text: 'Car',
+        link: '/car',
+        isPrimary: true,
+      },
+      {
+        text: 'Education',
+        link: '/education',
+        isPrimary: true,
+      },
+      {
+        text: 'Facebook',
+        link: '/facebook',
+        isPrimary: true,
+      },
+      {
+        text: 'Java Script',
+        link: '/js',
+        isPrimary: true,
+      },
+      {
+        text: 'Person',
+        link: '/person',
+        isPrimary: true,
+      },
+      {
+        text: 'Program',
+        link: '/program',
+        isPrimary: true,
+      },
+      {
+        text: 'Skills',
+        link: '/skills',
+        isPrimary: true,
+      },
+      {
+        text: 'Summary',
+        link: '/summary',
+        isPrimary: true,
+      },
+      {
+        text: 'Web',
+        link: '/web',
+        isPrimary: true,
+      },
+      {
+        text: 'Work',
+        link: '/work',
+        isPrimary: true,
+      },
+    ],
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
@@ -3133,6 +3211,40 @@ router.get('/shopcatalog', function (req, res) {
     ],
   })
   //                  ↑↑ сюди вводимо JSON дані
+})
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrapcss', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrapcss', {
+    // layout: bootstrap,
+    // ↙ сюди вводимо JSON дані
+    images: [
+      'https://picsum.photos/110/100',
+      'https://picsum.photos/110/100',
+      'https://picsum.photos/110/100',
+    ],
+    page: {
+      title: 'Resume - summary',
+    },
+    header,
+
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
+              work on a new project I learn the domain and try to understand the idea of the project. Good team
+              player, every colleague is a friend to me.`,
+      },
+
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
+              tournament position, goals etc), analyzing by simple mathematics models and preparing probability
+              for such events like: money line - first win / draw / second win, totals etc.`,
+      },
+    },
+  })
 })
 
 module.exports = router
