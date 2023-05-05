@@ -1,7 +1,7 @@
 <div>
      {{#with main}}
         <main>
-            <section>
+            <dir class="col-4 text-bg-warning m-2 p-2">
                 {{> title big=true data="My educationss" big=true}}
                 <ul>
                     {{#each educations}}
@@ -13,9 +13,9 @@
                         </li>
                     {{/each}}
                 </ul>
-            </section>
-                <br />
-            <section>
+            </dir>
+                
+            <dir class="col-4 text-bg-warning m-2 p-2">
                 {{> title big=false data="My certificates"}}
                     <ul>
                         {{#each certificates}}
@@ -25,7 +25,7 @@
                             </li>
                         {{/each}}
                     </ul>
-            </section>
+            </dir>
         </main>
     {{/with}}
 </div>

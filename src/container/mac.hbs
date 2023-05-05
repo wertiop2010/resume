@@ -1,18 +1,22 @@
 <div>
     <main>
         <section>
-            <div>
-                <h1>{{name}}</h1>
-                <em>{{description}}</em><br>
-                <b><span class="badge rounded-pill text-bg-danger">{{price}}</span></b><br>
-                <b>{{category}}</b><br>
-                <span class="badge text-bg-primary">features:</span>
-                <ul>
+            <div class="col-10">
+                <div class="text-center">
+                    <h1>{{name}}</h1>
+                    <em>{{description}}</em><br>
+                    <b><span class="badge rounded-pill text-bg-danger">{{price}}</span></b><br>
+                    <b>{{category}}</b><br>
+                    <span class="badge text-bg-primary">features:</span>
+                </div> 
+            </div>
+            <div>  
+                <div class="row">
                     {{#with features}}
-                        <li>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#with processor}}
-                                processor:
+                                <span class="badge text-bg-primary">processor:</span>
                                 <li>
                                     brand{{brand}}
                                 </li>
@@ -30,8 +34,8 @@
                                 </li>
                                 {{/with}}
                             </ul>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#with memory}}
                                 <span class="badge text-bg-primary">memory:</span>
@@ -46,8 +50,8 @@
                                 </li>
                                 {{/with}}
                             </ul>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#with storage}}
                                  <span class="badge text-bg-primary">storage:</span>
@@ -59,8 +63,8 @@
                                 </li>
                                 {{/with}}
                             </ul>
-                        </li>
-                         <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#with display}}
                                 <span class="badge text-bg-primary">display:</span>
@@ -84,8 +88,8 @@
                                 </li>
                                 {{/with}}
                             </ul>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#with graphics}}
                                 <span class="badge text-bg-primary">graphics:</span>
@@ -100,8 +104,8 @@
                                 </li>
                                 {{/with}}
                             </ul>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#each ports}}
                                 <span class="badge text-bg-primary">ports:</span>
@@ -122,8 +126,8 @@
 
                                 {{/each}}
                             </ul>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#with battery}}
                                 <span class="badge text-bg-primary">ports:</span>
@@ -138,11 +142,11 @@
                                 </li>
                                 {{/with}}
                             </ul>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                           <span class="badge text-bg-primary">operating_system: {{operating_system}} </span>  
-                        </li>
-                        <li>
+                        </div>
+                        <div class="card col-3 p-3 m-3 text-bg-info">
                             <ul>
                                 {{#each accessories}}
                                 <span class="badge text-bg-primary">accessories:</span>
@@ -154,15 +158,11 @@
                                 </li>
                                 {{/each}}
                             </ul>
-                        </li>
+                        </div>
                     {{/with}}
                 </ul>
+            </div>
             </div>
         </section>
     </main>
 </div>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}

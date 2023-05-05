@@ -1,8 +1,9 @@
 <div> 
     <main>
         <section>
-            <div><h1><span class="badge bg-secondary">{{name}}</span></h1></div>
-            <p><b>{{description}}</b></p> 
+            <div class="card col-4 p-3 my-3 text-bg-primary">
+                <h1><span class="badge bg-secondary">{{name}}</span></h1>
+                <p><b>{{description}}</b></p> 
                 <div> 
                     year: {{history.year}}<br>
                     founder: {{history.founder}}<br>
@@ -18,48 +19,48 @@
                     {{/each}}
                 </ul>
                 </div>
-
-                <div> 
-                    <b>syntax:</b>
-                    <br>
+            </div>
+                <div class="card col-4 p-3 my-3 ms-5 text-bg-primary">
+                    <b class="my-2">syntax:</b>
+                    
                     {{#with syntax}}
                         {{#each variables}}
-                        <span class="badge text-bg-success"><li>{{this}}</li></span>
+                        <span class="badge text-bg-success my-2"><li class="my-2">{{this}}</li></span>
                         
                         {{/each}}
-                        <br>
+                        
                         {{#each functions}}
-                        <span class="badge text-bg-info"><li>{{this}}</li></span>
+                        <span class="badge text-bg-info my-2"><li class="my-2" >{{this}}</li></span>
                       
                         {{/each}}
-                        <br>
+                        
                         {{#each conditionals}}
-                        <span class="badge text-bg-danger"><li>{{this}}</li></span>
+                        <span class="badge text-bg-danger my-2"><li class="my-2">{{this}}</li></span>
                        
                         {{/each}}
-                        <br>
+                        
                         {{#each loops}}
-                        <span class="badge text-bg-primary"><li>{{this}}</li></span>
+                        <span class="badge text-bg-light my-2"><li class="my-2">{{this}}</li></span>
                         
                         {{/each}}
-                        <br>
+                        
                         {{#each classes}}
-                        <span class="badge text-bg-dark"><li>{{this}}</li></span>
+                        <span class="badge text-bg-dark my-2"><li class="my-2">{{this}}</li></span>
                         
                         {{/each}}
-                        <br>
+                        
                     {{/with}}
                 </div> 
 
-                <div>
+                <div class="card col-4 p-3 my-3 text-bg-primary">
                      <b>libraries:</b> <br>
                     {{#each libraries}}
-                        <span class="badge text-bg-dark"><li>{{this}}</li></span>
+                        <span class="badge text-bg-dark"><li class="my-2">{{this}}</li></span>
                         <br>
                     {{/each}}
                      <b>libraries:</b> <br>
                      {{#each tools}}
-                        <span class="badge text-bg-primary"><li>{{this}}</li></span>
+                        <span class="badge text-bg-light"><li class="my-2">{{this}}</li></span>
                         <br>
                     {{/each}}
                     <div>

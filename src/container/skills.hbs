@@ -6,7 +6,7 @@
 <div>
     {{#with main}}
         <main>
-            <section>
+            <div class="card text-bg-secondary col-3 m-2 p-3 my-5">
                 {{> title big=true data="All skills"}}
                 <ul>
                     {{#each skills}}
@@ -27,9 +27,9 @@
                         </li>
                     {{/each}}
                 </ul>
-            </section>
+            </div>
                 <br />
-            <section>
+            <div class="card text-bg-secondary col-3 m-2 p-3 my-5">
                 {{> title big=false data="My hobbies"}}
                     <ol>
                         {{#each hobbies}}
@@ -39,7 +39,7 @@
                             </li>
                         {{/each}}
                     </ol>
-            </section>
+            </div>
         </main>
     {{/with}}
 </div>

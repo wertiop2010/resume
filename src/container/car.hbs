@@ -1,232 +1,238 @@
-<div>
-    <main>
-        <section>
+
+<main>
+    <section>
+        <div class="card col-8 p-3 my-3 text-bg-success text-center">
             <div>
                 <h1>make: {{make}}</h1>
             </div>
             <br>
-             <div>
+                <div>
                 <b>model: {{model}}</b>
             </div>
             <br>
-             <div>
+                <div>
                 <b>year: {{year}}</b>
             </div>
             <br>
-             <div>
+                <div>
                 <b>color: {{color}}</b>
             </div>
-            <br>
-            <div>
-                {{#with features}}
-                    {{#with interior}}
-                        <span class="badge text-bg-success">interior:</span><br>
-                        <ul>
-                            {{#with seats}}
-                                seats:
-                                <li>
-                                    {{material}}
-                                </li> 
-                                <li>                                  
-                                    {{color}}
-                                </li>
-                                <li>                                 
-                                    {{heated}}
-                                </li>
-                                <li>                                  
-                                    {{ventilated}}
-                                </li>
-                            {{/with}}
-                        </ul>
-                        <div>
-                        <ul>
-                            {{#with dashboard}}
-                                <span class="badge text-bg-success">dashboard:</span><br>
-                                <li>
-                                    {{material}}
-                                </li> 
-                                <li>                                  
-                                    {{color}}
-                                </li>
-                                <li> 
-                                    <ul>                                
-                                    {{#with display}}
-                                    display:
-                                    <li>{{type}}</li>
-                                    <li>{{size}}</li>
-                                    <li>{{resolution}}(touchscreen)</li>
-                                    {{/with}}
-                                    </ul>
-                                </li>
-                                <li>                                  
-                                    {{ventilated}}
-                                </li>
-                            {{/with}}
-                            </div>
-                        </ul>
-                        {{#with audio}}
-                            {{C}}
-                            <br>
-                            speakers: ({{speakers}}) subwoofer, bluetooth, USB
-                            <br>
+        </div>
+
+        <div class="row">
+            
+        <div class="card col-4 p-3 m-2 text-bg-info">
+            {{#with features}}
+            {{#with interior}}
+            <span class="badge text-bg-success">interior:</span><br>
+            <ul>
+                {{#with seats}}
+                    seats:
+                    <li>
+                        {{material}}
+                    </li> 
+                    <li>                                  
+                        {{color}}
+                    </li>
+                    <li>                                 
+                        {{heated}}
+                    </li>
+                    <li>                                  
+                        {{ventilated}}
+                    </li>
+                {{/with}}
+            <ul>      
+        </div>            
+        <div class="card col-4 p-3 my-3 text-bg-info">
+            <ul>
+                {{#with dashboard}}
+                    <span class="badge text-bg-success">dashboard:</span><br>
+                    <li>
+                        {{material}}
+                    </li> 
+                    <li>                                  
+                        {{color}}
+                    </li>
+                    <li> 
+                        <ul>                                
+                        {{#with display}}
+                        display:
+                        <li>{{type}}</li>
+                        <li>{{size}}</li>
+                        <li>{{resolution}}(touchscreen)</li>
                         {{/with}}
-                    {{/with}}
-                    <ul>
+                        </ul>
+                    </li>
+                    <li>                                  
+                        {{ventilated}}
+                    </li>
+                {{/with}}
+            </ul>
+        </div>
+        <div class="card col-4 p-3 my-3 text-bg-info">
+            {{#with audio}}
+                {{C}}
+                <br>
+                speakers: ({{speakers}}) subwoofer, bluetooth, USB
+                <br>
+            {{/with}}
+                {{/with}}
+                <ul>
                     {{#with exterior}}
                     <li>
                         <ul>
                         {{#with wheels}}
                             <span class="badge text-bg-secondary">wheels:</span>
-                           <li>
+                            <li>
                             size {{size}}
                             <br>
                             type {{type}}
                             <br>
                             color {{color}}
                             <br>
-                           </li>
-                        {{/with}}
-                        </ul>
-                        <ul>
-                        {{#with headlights}}
-                        <span class="badge text-bg-secondary">headlights:</span>
-                            <li>
-                            size {{type}}
-                            <br>
-                            type {{brightness}}
-                            <br>
-                            {{#if automatic}}automatic{{/if}}
-                            <br>
                             </li>
                         {{/with}}
                         </ul>
-                        <ul>
-                        {{#with sunroof}}
-                            <span class="badge text-bg-secondary">sunroof:</span>
-                            <li>
-                            type {{type}}
-                            <br>
-                            type {{size}}
-                            <br>
-                            {{#if automatic}}automatic{{/if}}
-                            <br>
-                            </li>
-                        {{/with}}
-                        </ul>
-                    </li>
+                </ul>
+        </div>
+        <div class="card col-4 p-3 m-3 text-bg-info">
+                    {{#with headlights}}
+                    <span class="badge text-bg-secondary">headlights:</span>
+                        <li>
+                        size {{type}}
+                        <br>
+                        type {{brightness}}
+                        <br>
+                        {{#if automatic}}automatic{{/if}}
+                        <br>
+                        </li>
                     {{/with}}
-                    <li>
-                    {{#with safety}}
-                        <ul>
-                        {{#with airbags}}
-                        <span class="badge text-bg-secondary">airbags:</span>
-                            <li>
-                                front{{front}}
-                            </li>
-                           
-                            <li>
-                               side {{side}}
-                            </li>
-                           
-                            <li>
-                                knee{{knee}}
-                            </li>
-                            
-                            <li>
-                               rear {{rear}}
-                            </li>
-                            
-                        {{/with}}
-                        </ul>
+                    </ul>
+                    <ul>
+                    {{#with sunroof}}
+                        <span class="badge text-bg-secondary">sunroof:</span>
+                        <li>
+                        type {{type}}
+                        <br>
+                        type {{size}}
+                        <br>
+                        {{#if automatic}}automatic{{/if}}
+                        <br>
+                        </li>
+                    {{/with}}
+                    </ul>
+                </li>
+                {{/with}}
+                <li>
+                {{#with safety}}
+                    <ul>
+                    {{#with airbags}}
+                    <span class="badge text-bg-secondary">airbags:</span>
+                        <li>
+                            front{{front}}
+                        </li>
                         
-                        <ul>
-                        {{#with assistance}}
-                             <span class="badge text-bg-secondary">assistance:</span>
-                            <li>{{#if blind_spot_monitoring}}blind_spot_monitoring{{/if}} </li>
-                             <li>{{#if rear_cross_traffic_alert}}rear_cross_traffic_alert{{/if}} </li>
-                              <li>{{#if lane_departure_warning}}lane_departure_warning{{/if}} </li>
-                               <li>{{#if adaptive_cruise_control}}adaptive_cruise_control{{/if}} </li>
-                                <li>{{#if collision_warning}}collision_warning{{/if}} </li>
+                        <li>
+                            side {{side}}
+                        </li>
+                        
+                        <li>
+                            knee{{knee}}
+                        </li>
+                        
+                        <li>
+                            rear {{rear}}
+                        </li>
+                        
                         {{/with}}
                         </ul>
+        </div>
+        <div class="card col-4 p-3 m-3 text-bg-info">
+                    <ul>
+                    {{#with assistance}}
+                            <span class="badge text-bg-secondary">assistance:</span>
+                        <li>{{#if blind_spot_monitoring}}blind_spot_monitoring{{/if}} </li>
+                            <li>{{#if rear_cross_traffic_alert}}rear_cross_traffic_alert{{/if}} </li>
+                            <li>{{#if lane_departure_warning}}lane_departure_warning{{/if}} </li>
+                            <li>{{#if adaptive_cruise_control}}adaptive_cruise_control{{/if}} </li>
+                            <li>{{#if collision_warning}}collision_warning{{/if}} </li>
                     {{/with}}
-                    </li>
                     </ul>
-                    <ul>
                 {{/with}}
-                {{#with engine}}
-                   <span class="badge text-bg-secondary">engine:</span> 
-                   <li>
-                         type{{type}}
-                    </li>
-                    <li>
-                         displacement{{displacement}}
-                    </li>
-                    <li>
-                         horsepower{{horsepower}}
-                    </li>
-                    <li>
-                         torque{{torque}}
-                    </li>
-                    <ul>
-                         {{#with transmission}}
-                          <span class="badge text-bg-secondary">transmission:</span>
-                             <li>
-                            type{{type}}
-                            </li>
+                </li>
+                </ul>
+        </div>
+        <div class="card col-4 p-3 my-3 text-bg-info">
+                <ul>
+            {{/with}}
+            {{#with engine}}
+                <span class="badge text-bg-secondary">engine:</span> 
+                <li>
+                        type{{type}}
+                </li>
+                <li>
+                        displacement{{displacement}}
+                </li>
+                <li>
+                        horsepower{{horsepower}}
+                </li>
+                <li>
+                        torque{{torque}}
+                </li>
+                <ul>
+                        {{#with transmission}}
+                        <span class="badge text-bg-secondary">transmission:</span>
                             <li>
-                            gears{{gears}}
-                            </li>
-                         {{/with}}
-                    </ul>
-                {{/with}}
-                    <ul>
-                    {{#with fuel_economy}}
-                    <span class="badge text-bg-secondary">fuel_economy:</span>
-                    <li>
-                         city{{city}}
-                    </li>
-                    <li>
-                         highway{{highway}}
-                    </li>
-                    <li>
-                         combined{{combined}}
-                    </li>
-                    {{/with}}
-                    </ul>
-                    {{#with price}}
-                     <span class="badge text-bg-secondary">price:</span>
-                     <li>
-                         city{{city}}
-                    </li>
-                    <li>
-                         city{{city}}
-                    </li>
-                    <ul>
-                       {{#with options}} 
-                       <span class="badge text-bg-secondary">options:</span>
-                       <li>
-                         navigation{{navigation}}
-                    </li>
-                    <li>
-                         moonroof{{moonroof}}
-                    </li>
-                    <li>
-                         premium_paint{{premium_paint}}
-                    </li>
-                       {{/with}}
-                    </ul>
-                    <li>
-                         total: <span class="badge text-bg-danger">{{total}}$ </span>
-                    </li>
-                     {{/with}}
+                        type{{type}}
+                        </li>
+                        <li>
+                        gears{{gears}}
+                        </li>
+                        {{/with}}
                 </ul>
             </div>
-        </section>
-    </main>
-</div>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+            {{/with}}
+                <ul>
+                {{#with fuel_economy}}
+                <span class="badge text-bg-secondary">fuel_economy:</span>
+                <li>
+                        city{{city}}
+                </li>
+                <li>
+                        highway{{highway}}
+                </li>
+                <li>
+                        combined{{combined}}
+                </li>
+                {{/with}}
+                </ul>
+                {{#with price}}
+                    <span class="badge text-bg-secondary">price:</span>
+                    <li>
+                        city{{city}}
+                </li>
+                <li>
+                        city{{city}}
+                </li>
+                <ul>
+                    {{#with options}} 
+                    <span class="badge text-bg-secondary">options:</span>
+                    <li>
+                        navigation{{navigation}}
+                </li>
+                <li>
+                        moonroof{{moonroof}}
+                </li>
+                <li>
+                        premium_paint{{premium_paint}}
+                </li>
+                    {{/with}}
+                </ul>
+                <li>
+                        total: <span class="badge text-bg-danger">{{total}}$ </span>
+                </li>
+                    {{/with}}
+            </ul>
+        </div>
+    </section>
+</main>

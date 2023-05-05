@@ -1,33 +1,35 @@
 <div>
     <main>
         <section>
-            <h1>{{name}}</h1>
-            <br>
-            <div>
-            Birthday: {{birthdate}}
-            <br>
-            Birthplace: {{birthplace}}
-            <br>
-            Deathdate: {{deathdate}}
-            <br>
-            Deathplace: {{deathplace}}
-            <br>
-            Nationality: {{nationality}}
-            <br>
-            Occupation: {{occupation}}
-            <br>
+            <div class="card col-4 p-3 my-3 text-bg-success">
+                <h1 class="m-2">{{name}}</h1>
+               
+                <div>
+                <p>Birthday: {{birthdate}}</p>
+                
+                <p>Birthplace: {{birthplace}}</p>
+              
+                <p>Deathdate: {{deathdate}}</p>
+               
+                <p>Deathplace: {{deathplace}}</p>
+               
+                <p>Nationality: {{nationality}}</p>
+               
+                <p>Occupation: {{occupation}}</p>
+                
+                </div>
+                <hr>
+                <em>Known for:</em>
+                <div>
+                <ul>
+                {{#each known_for}}
+                    <li>{{this}}</li>
+                {{/each}} 
+                </ul>
+                </div>
             </div>
-            <hr>
-            <em>Known for:</em>
-            <div>
-            <ul>
-            {{#each known_for}}
-                <li>{{this}}</li>
-            {{/each}} 
-            </ul>
-            </div>
-            <br>
-            <div>
+            
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <strong>Education:</strong> 
                 <div>
                     <ul>
@@ -45,8 +47,8 @@
                     </ul>
                 </div>           
             </div>
-            <br>
-            <div>
+            
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <strong>Notable publications:</strong>
                 <div>
                     <ul>
@@ -62,7 +64,8 @@
                     </ul> 
                 </div>
             </div>
-            <div>
+
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <strong>Partners:</strong>
                 <div>
                     <ul>
@@ -78,7 +81,8 @@
                     </ul> 
                 </div>
             </div>
-            <div>
+
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <strong>Awards:</strong>
                 <div>
                     <ul>
@@ -94,65 +98,66 @@
                     </ul> 
                 </div>
             </div>
-            <div>
+
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <b>Influences:</b>
-            <ul>
-            {{#each influences}}
-                <li>{{this}}</li>
-            {{/each}} 
-            </ul>
+                <ul>
+                {{#each influences}}
+                    <li>{{this}}</li>
+                {{/each}} 
+                </ul>
             </div>
-            <br>
-            <div>
-                <b>influenced:</b>
-            <ul>
-            {{#each influenced}}
-                <li>{{this}}</li>
-            {{/each}} 
-            </ul>
+           
+            <div class="card col-4 p-3 my-3 text-bg-success">
+                    <b>influenced:</b>
+                <ul>
+                {{#each influenced}}
+                    <li>{{this}}</li>
+                {{/each}} 
+                </ul>
             </div>
-            <br>
-            <div>
+            
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <b>Quotes:</b>
-            <ul>
-            {{#each quotes}}
-                <li>{{this}}</li>
-            {{/each}} 
-            </ul>
+                <ul>
+                {{#each quotes}}
+                    <li>{{this}}</li>
+                {{/each}} 
+                </ul>
             </div>
-            <br>
-            <div>
+            
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <b>Major discoveries:</b>
-            <ul>
-            {{#each major_discoveries}}
-                <li>
-                    <abbr>{{title}}</abbr>
-                    <br>
-                    Year: {{year}}
-                    <br>
-                    {{description}}
-                </li>
-            {{/each}} 
-            </ul>
+                <ul>
+                {{#each major_discoveries}}
+                    <li>
+                        <abbr>{{title}}</abbr>
+                        <br>
+                        Year: {{year}}
+                        <br>
+                        {{description}}
+                    </li>
+                {{/each}} 
+                </ul>
             </div>
-            <br>
-            <div>
+            
+            <div class="card col-4 p-3 my-3 text-bg-success">
                 <b>Contributions:</b>
-            <ul>
-            {{#with contributions}}
-                <li>
-                    <abbr>{{title}}</abbr>
-                    <br>
-                    {{description}}
-                    <br>
-                    Year: {{year}}
-                    <br>
-                    Field: {{field}}
-                </li>
-            {{/with}} 
-            </ul>
+                <ul>
+                {{#with contributions}}
+                    <li>
+                        <abbr>{{title}}</abbr>
+                        <br>
+                        {{description}}
+                        <br>
+                        Year: {{year}}
+                        <br>
+                        Field: {{field}}
+                    </li>
+                {{/with}} 
+                </ul>
             </div>
-            <br>
+            
         </section>
     </main>
 </div>
